@@ -3,54 +3,57 @@ import java.time.Period;
 
 public class Persona {
 
-  String nombre;
-  String apellido;
-  private LocalDate fechaNacimiento;
-  int meta;
-  Perro perro;
+  private String nombre;
+  private String apellido;
+  private int edad;
+  private String dni;
 
-  public Persona(String nombre, String apellido, LocalDate fechaNacimiento, int meta) {
+  public Persona(String nombre, String apellido, int edad, String dni) {
     this.nombre = nombre;
     this.apellido = apellido;
-    this.fechaNacimiento = fechaNacimiento;
-    this.meta = meta;
-  }
-
-  public Persona(String nombre, String apellido, LocalDate fechaNacimiento, int meta, Perro perro) {
-    this.nombre = nombre;
-    this.apellido = apellido;
-    this.fechaNacimiento = fechaNacimiento;
-    this.meta = meta;
-    this.perro = perro;
-  }
-
-  public int getEdadEnAgnos() {
-
-    Period periodo = Period.between(this.fechaNacimiento, LocalDate.now());
-    return periodo.getYears();
-  }
-
-  public void setMeta(int meta) {
-    this.meta = meta;
+    this.edad = edad;
+    this.dni = dni;
   }
 
   public String saluda() {
-
-    if (this.perro != null) {
-      return String.format("Hola, mi nombre es %s %s y tengo un %s de %s años.", this.nombre, this.apellido,
-          this.perro.getRaza(), this.perro.getEdad());      
-    } else {      
-      return String.format("Hola, mi nombre es %s %s y no tengo mascota.", this.nombre, this.apellido);
-    }
-
+    return String.format("Hola, me llamo %s %s", this.nombre, this.apellido);
   }
 
-  public String caminar(int pasosDados) {
-    if (pasosDados >= this.meta) {
-      return "Felicitaciones! cumpliste tu meta diaria";
-    } else {
-      return "No cumpliste tu meta, ponete las pilas!";
-    }
-  }
+  // public Persona(String nombre, String apellido, LocalDate fechaNacimiento, int meta, Perro perro) {
+  //   this.nombre = nombre;
+  //   this.apellido = apellido;
+  //   this.fechaNacimiento = fechaNacimiento;
+  //   this.meta = meta;
+  //   this.perro = perro;
+  // }
+
+  // public int getEdadEnAgnos() {
+
+  //   Period periodo = Period.between(this.fechaNacimiento, LocalDate.now());
+  //   return periodo.getYears();
+  // }
+
+  // public void setMeta(int meta) {
+  //   this.meta = meta;
+  // }
+
+  // public String saluda() {
+
+  //   if (this.perro != null) {
+  //     return String.format("Hola, mi nombre es %s %s y tengo un %s de %s años.", this.nombre, this.apellido,
+  //         this.perro.getRaza(), this.perro.getEdad());      
+  //   } else {      
+  //     return String.format("Hola, mi nombre es %s %s y no tengo mascota.", this.nombre, this.apellido);
+  //   }
+
+  // }
+
+  // public String caminar(int pasosDados) {
+  //   if (pasosDados >= this.meta) {
+  //     return "Felicitaciones! cumpliste tu meta diaria";
+  //   } else {
+  //     return "No cumpliste tu meta, ponete las pilas!";
+  //   }
+  // }
 
 }
