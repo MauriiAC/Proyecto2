@@ -28,6 +28,10 @@ public abstract class Persona implements CharSequence {
     return dni;
   }
 
+  public int getEdad() {
+    return edad;
+  }
+
   public String getApellido() {
     return apellido;
   }

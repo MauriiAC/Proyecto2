@@ -61,5 +61,16 @@ public class Empleado extends Persona implements IEmpleado {
     }
   }
 
+  public void mostrarHorarioIngreso() {
+    class VisualizadorHorario {
+
+      private String horario = "8:00";
+      public void mostrar() {
+        System.out.println("El horario de ingreso actual es: " + Empleado.this.horario);
+      }
+    }
+    VisualizadorHorario visualizador = new VisualizadorHorario();
+    visualizador.mostrar();
+  }
 
 }
