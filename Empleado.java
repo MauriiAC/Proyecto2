@@ -1,7 +1,7 @@
 import java.time.LocalTime;
 import java.time.temporal.ChronoUnit;
 
-public class Empleado extends Persona {
+public class Empleado extends Persona implements IEmpleado {
   private int sueldo;
   private LocalTime horario;
   private EstadoEmpleado estado;
@@ -47,6 +47,7 @@ public class Empleado extends Persona {
     return String.format("Hola, me llamo %s %s y gano %s", this.getNombre(), this.getApellido(), this.sueldo);
   }
 
+
   public void fichar(LocalTime llegada) {
     
     long minutosDiferencia = llegada.until(this.horario, ChronoUnit.MINUTES);
@@ -59,5 +60,6 @@ public class Empleado extends Persona {
       System.out.println("Llegó a tiempo");
     }
   }
+
 
 }

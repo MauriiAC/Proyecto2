@@ -1,7 +1,7 @@
 import java.time.LocalDate;
 import java.time.Period;
 
-public abstract class Persona {
+public abstract class Persona implements CharSequence {
 
   private String nombre;
   private String apellido;
@@ -24,8 +24,28 @@ public abstract class Persona {
     return nombre;
   }
 
+  public String getDni() {
+    return dni;
+  }
+
   public String getApellido() {
     return apellido;
+  }
+
+  public int length() {
+    return this.nombre.length();
+  }
+
+  @Override
+  public char charAt(int index) {
+    // TODO Auto-generated method stub
+    throw new UnsupportedOperationException("Unimplemented method 'charAt'");
+  }
+
+  @Override
+  public CharSequence subSequence(int arg0, int arg1) {
+    // TODO Auto-generated method stub
+    throw new UnsupportedOperationException("Unimplemented method 'subSequence'");
   }
 
   // public Persona(String nombre, String apellido, LocalDate fechaNacimiento, int meta, Perro perro) {

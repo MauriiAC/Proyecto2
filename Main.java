@@ -1,4 +1,5 @@
 import java.time.LocalTime;
+import java.util.Arrays;
 
 public class Main {
   public static void main(String[] args) {
@@ -11,20 +12,30 @@ public class Main {
 
     // empleado1.setEstado(Empleado.EstadoEmpleado.ACTIVO);
     empleado1.setEstado("INACTIVO");
-    System.out.println("El empleado está en estado " + empleado1.getEstado());
-    System.out.println("El empleado está en estado " + empleado1.getEstado().getNum());
+    // System.out.println("El empleado está en estado " + empleado1.getEstado());
+    // System.out.println("El empleado está en estado " + empleado1.getEstado().getNum());
 
+    // Main.imprimirLongitud(empleado1);
 
-    // Persona[] saludadores = { persona1, empleado1, seguridad1 };
+    Persona[] personas = {empleado1, persona1, seguridad1};
 
-    // for (Persona p : saludadores) {
-    //   System.out.println(p.saluda());
-    // }
+    Arrays.sort(personas);
 
-    // Seguridad seguridad2 = (Seguridad) saludadores[2];
-
-    // System.out.println(seguridad2.llamarPolicia("están robando el edificioooo!!"));
-    // System.out.println(((Seguridad) saludadores[2]).llamarPolicia("están robando el edificioooo!!"));
+    for (Persona p : personas) {
+      System.out.println(p.getDni());
+    }
 
   }
+
+  public static void imprimirLongitud(Object objeto) {
+    
+    if (objeto instanceof CharSequence) {
+      CharSequence secuencia = (CharSequence) objeto;
+      int longitud = secuencia.length();
+      System.out.println("Longitud: " + longitud);
+    } else {
+      System.out.println("El objeto no implementa length");
+    }
+  }
+
 }
