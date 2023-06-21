@@ -1,7 +1,7 @@
 import java.time.LocalDate;
 import java.time.Period;
 
-public class Persona {
+public abstract class Persona {
 
   private String nombre;
   private String apellido;
@@ -15,8 +15,17 @@ public class Persona {
     this.dni = dni;
   }
 
-  public String saluda() {
-    return String.format("Hola, me llamo %s %s", this.nombre, this.apellido);
+  public abstract String saluda();
+  // public String saluda() {
+  //   return String.format("Hola, me llamo %s %s", this.nombre, this.apellido);
+  // }
+
+  public String getNombre() {
+    return nombre;
+  }
+
+  public String getApellido() {
+    return apellido;
   }
 
   // public Persona(String nombre, String apellido, LocalDate fechaNacimiento, int meta, Perro perro) {
