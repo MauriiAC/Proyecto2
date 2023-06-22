@@ -1,0 +1,4 @@
+Este es un archivo externo
+con algunas de lineas de código
+en él, para hacer pruebas desde
+nuestros programas en java
