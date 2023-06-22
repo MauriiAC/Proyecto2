@@ -23,10 +23,13 @@ public class Main {
         break;
       } catch (NumberFormatException e){
         System.out.println("Debe ingresar datos numéricos");
+      } catch (IllegalArgumentException e){
+        System.out.println(e.getMessage());
       } catch (Exception e) {
         System.out.println(e.getClass());
-        System.out.println(e.getMessage());
         System.out.println("Se produjo un error");
+      } finally {
+        System.out.println("Se ejecutó el finally");
       }
     }
 
